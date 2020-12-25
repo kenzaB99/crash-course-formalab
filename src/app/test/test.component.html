@@ -1,0 +1,44 @@
+<h1> Bonjour {{name}} </h1>
+<p> {{user.firstname}} {{user.lastname}} {{user.age}} </p>
+
+<ul>
+    <li *ngFor="let tech of technos">
+        {{tech}}
+    </li>
+</ul>
+
+<table class="table">
+    <thead>
+        <th> image </th>
+        <th> username</th>
+        <th> email </th>
+        <th> age </th>
+        <th> university </th>
+        <th> admistest </th>
+        <th>#</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let x of student">
+            <td> <img [src]="x.image" class="w-25"> </td>
+            <td> {{x.username}} </td>
+            <td> {{x.email}} </td>
+            <td> {{x.age}} </td>
+            <td> {{x.university}} </td>
+            <span *ngIf="x.admistest==false" class="badge badge-danger">Try again</span>
+            <span *ngIf="x.admistest==true" class="badge badge-success">Congrats</span>
+
+            <td> <i (click)="deleteStudent(x)" class="fa fa-trash text-danger"></i> </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<h1>Categories</h1>
+<ul>
+    <li *ngFor="let category of categoriesList">{{category.name}}</li>
+
+
+
+</ul>
